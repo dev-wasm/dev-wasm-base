@@ -5,7 +5,7 @@ ENV WASI_VERSION=17
 ENV WASI_VERSION_FULL=17.0
 
 RUN apt update && \
-    apt install curl xz-utils lldb llvm -y -qq && \
+    apt install curl xz-utils lldb llvm nano -y -qq && \
     curl https://wasmtime.dev/install.sh -sSf | bash && \
     curl https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${WASI_VERSION}/wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz -L --output wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz && \
     tar xvf wasi-sdk-${WASI_VERSION_FULL}-linux.tar.gz && \
