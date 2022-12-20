@@ -31,4 +31,5 @@ RUN git config --global core.editor "code --wait"
 
 # Setup lighthttpd
 COPY wagi.sh /usr/bin/wagi.sh
+RUN chmod a+x /usr/bin/wagi.sh
 
