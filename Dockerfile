@@ -7,6 +7,17 @@ RUN apt update && \
     cmake build . && \
     make
 
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
+    git clone https://github.com/brendandburns/wasmtime
+
+RUN apt install -y -qq pkg-config libssl-dev
+
+RUN cd wasmtime && \
+    git fetch origin && \
+    git checkout v4.0.0 && \
+    git submodule update --init && \
+    bash -c 'source $HOME/.cargo/env; cargo build'
+
 FROM ubuntu:22.04
 
 # wasmtime
@@ -33,3 +44,5 @@ RUN git config --global core.editor "code --wait"
 COPY wagi.sh /usr/bin/wagi.sh
 RUN chmod a+x /usr/bin/wagi.sh
 
+# Setup wasi+http
+COPY --from=0 wasmtime/target/debug/wasmtime /usr/bin/wasmtime-http
