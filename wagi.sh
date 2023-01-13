@@ -1,16 +1,16 @@
 #!/bin/sh
 
 /root/.wasmtime/bin/wasmtime .${SCRIPT_NAME} \
-  --env QUERY_STRING=${QUERY_STRING} \
-  --env CONTENT_LENGTH=${CONTENT_LENGTH} \
-  --env PATH=${PATH} \
-  --env HTTP_USER_AGENT=${HTTP_USER_AGENT} \
-  --env REMOTE_ADDR=${REMOTE_ADDR} \
-  --env REMOTE_PORT=${REMOTE_PORT} \
-  --env REQUEST_METHOD=${REQUEST_METHOD} \
-  --env REQUEST_SCHEME=${REQUEST_SCHEME} \
-  --env REQUEST_URI=${REQUEST_URI} \
-  --env HTTP_HOST=${HTTP_HOST}
+  --env QUERY_STRING="${QUERY_STRING}"\
+  --env CONTENT_LENGTH="${CONTENT_LENGTH}"\
+  --env PATH="${PATH}"\
+  --env HTTP_USER_AGENT="${HTTP_USER_AGENT}"\
+  --env REMOTE_ADDR="${REMOTE_ADDR}"\
+  --env REMOTE_PORT="${REMOTE_PORT}"\
+  --env REQUEST_METHOD="${REQUEST_METHOD}"\
+  --env REQUEST_SCHEME="${REQUEST_SCHEME}"\
+  --env REQUEST_URI="${REQUEST_URI}"\
+  --env HTTP_HOST="${HTTP_HOST}"
 
 # TODO: Add these as needed.
 #DOCUMENT_ROOT='/workspaces/dev-wasm-rust/'
@@ -21,7 +21,6 @@
 #HTTP_CACHE_CONTROL='max-age=0'
 #HTTP_CONNECTION='Keep-Alive'
 #HTTP_DNT='1'
-#HTTP_HOST='localhost'
 #HTTP_PROXY_CONNECTION='Keep-Alive'
 #HTTP_SEC_CH_UA='"Not?A_Brand";v="8", "Chromium";v="108", "Microsoft Edge";v="108"'
 #HTTP_SEC_CH_UA_MOBILE='?0'
