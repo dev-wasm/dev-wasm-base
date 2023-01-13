@@ -9,7 +9,8 @@
   --env REMOTE_PORT=${REMOTE_PORT} \
   --env REQUEST_METHOD=${REQUEST_METHOD} \
   --env REQUEST_SCHEME=${REQUEST_SCHEME} \
-  --env REQUEST_URI=${REQUEST_URI}
+  --env REQUEST_URI=${REQUEST_URI} \
+  --env HTTP_HOST=${HTTP_HOST}
 
 # TODO: Add these as needed.
 #DOCUMENT_ROOT='/workspaces/dev-wasm-rust/'
